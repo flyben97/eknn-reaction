@@ -38,4 +38,4 @@ python -m pip install -c requirements-tested.txt -e '.[research,dev]'
 python -m pytest -q
 ```
 
-See [NOTICE](NOTICE) for attribution and licence status.
+Released under the [MIT License](LICENSE). Attribution details are in [NOTICE](NOTICE).

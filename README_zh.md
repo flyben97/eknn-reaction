@@ -38,4 +38,4 @@ python -m pip install -c requirements-tested.txt -e '.[research,dev]'
 python -m pytest -q
 ```
 
-项目署名和许可证状态见 [NOTICE](NOTICE)。
+本项目采用 [MIT 许可证](LICENSE)。署名说明见 [NOTICE](NOTICE)。
