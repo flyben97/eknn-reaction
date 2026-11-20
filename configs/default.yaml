@@ -1,0 +1,49 @@
+# eKNN reaction GNN default configuration
+# Override via CLI: python scripts/train_gnn_eknn.py --set train.device=cuda
+
+data:
+  max_len: 256
+  batch_size: 32
+  test_frac: 0.3
+  val_frac: 0.15
+  seed: 42
+
+model:
+  # GNN backbone params
+  d_model: 256
+  n_layers: 3
+  n_heads: 4
+  ff_dim: 512
+  edge_dim: 64
+  pe_dim: 3
+  dropout: 0.1
+  backbone: "gps"  # gps, mpnn, gat, graph_transformer, edge_transformer, graphormer, etc.
+  readout: "mean_max"  # mean_max, mean, sum, attn
+  use_jk: false
+  use_virtual_node: false
+
+train:
+  epochs: 100
+  batch_size: 32
+  lr: 0.001
+  weight_decay: 0.0001
+  grad_clip: 1.0
+  warmup_epochs: 5
+  early_stop_patience: 20
+  min_epochs: 30
+  optimizer: "adamw"  # adamw, sgd
+  swa_start: 0  # epoch to start SWA (0 = disabled)
+  device: "cpu"
+  amp: false
+  log_every: 10
+  seed: 42
+
+# eKNN TTT params
+eknn:
+  k_grid: [5, 10, 20, 50, 100]
+  t_grid: [0.05, 0.1, 0.2, 0.5]
+  ensemble_k: [5, 10, 20, 50]
+  ensemble_T: 0.1
+
+out_dir: "results"
+exp_name: "default"

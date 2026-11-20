@@ -1,0 +1,20 @@
+# Direct dependencies for the Python 3.10 reference environment.
+# CPU/CUDA build selection and transitive dependencies are not fully locked.
+numpy==2.2.6
+pandas==2.3.3
+scipy==1.15.3
+PyYAML==6.0.3
+scikit-learn==1.7.2
+torch==2.9.1
+torch-geometric==2.7.0
+rdkit==2025.9.1
+matplotlib==3.10.7
+joblib==1.5.2
+requests==2.32.5
+openpyxl==3.1.5
+lightgbm==4.6.0
+xgboost==3.1.2
+catboost==1.2.8
+pytest==9.0.3
+setuptools==80.9.0
+wheel==0.45.1

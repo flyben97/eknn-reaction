@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "eknn-reaction-prediction"
+version = "0.3.0"
+description = "Reaction graph prediction and residual nearest-neighbour correction"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = ["numpy>=1.24", "pandas>=2.0", "scipy>=1.10", "PyYAML>=6", "scikit-learn>=1.6", "torch>=2.0", "torch-geometric>=2.4", "rdkit>=2023.9", "matplotlib>=3.7", "joblib>=1.3", "requests>=2.31", "openpyxl>=3.1"]
+
+[project.scripts]
+eknn-train = "eknn_reaction.training.runner:main"
+
+[project.optional-dependencies]
+research = ["lightgbm>=4", "xgboost>=2", "catboost>=1.2"]
+dev = ["pytest>=8", "build>=1"]
+
+[tool.setuptools.packages.find]
+include = ["eknn_reaction*", "serm*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
